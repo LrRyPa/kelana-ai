@@ -21,7 +21,6 @@ def main():
     currency     = input("Masukkan mata uang       : ")
     travel_month = input("Masukkan bulan perjalanan: ")
 
-    print()
     print_trip_summary(destination, country, days, budget, currency, travel_month)
 
 
