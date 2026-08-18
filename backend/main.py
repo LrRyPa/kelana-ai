@@ -1,44 +1,56 @@
+from typing import List
+from fastapi import FastAPI
+from pydantic import BaseModel
+
 from services.trip_service import (
     get_trip_category,
-    get_travel_season,
-    calculate_daily_budget,
-    get_recommended_places
+    calculate_daily_budget
 )
 
-def print_trip_summary(destination, country, days, budget, currency, travel_month):
-    category = get_trip_category(budget)
-    season = get_travel_season(travel_month)
-    daily_budget = calculate_daily_budget(budget, days)
-    places = get_recommended_places(destination)
+app = FastAPI(
+    title="KelanaAI API",
+    description="Backend API untuk perencanaan perjalanan KelanaAI",
+    version="1.0.0"
+)
 
-    print("\n==================================")
-    print("             KelanaAI             ")
-    print("==================================")
-    print(f"Destination    : {destination}")
-    print(f"Country        : {country}")
-    print(f"Days           : {days} Hari")
-    print(f"Budget         : {budget:.0f} {currency}")
-    print(f"Daily Budget   : {daily_budget:.2f} {currency}/hari")
-    print(f"Category       : {category}")
-    print(f"Season         : {season}")
-    print("==================================")
+class TripRequest(BaseModel):
+    destination: str
+    days: int
+    budget: float
 
-    print("\nRecommended Places: ")
-    for idx, place in enumerate(places, start=1):
-        print(f"  {idx}. {place}")
-    print("==================================\n")
+@app.get("/", tags=["General"])
+def home():
+    return {"message": "Welcome to KelanaAI"}
 
-def main():
-    print("Selamat datang di KelanaAI! Mari rencanakan perjalanan Anda.\n")
 
-    destination  = input("Masukkan destinasi       : ")
-    country      = input("Masukkan negara          : ")
-    days         = int(input("Masukkan jumlah hari     : "))
-    budget       = float(input("Masukkan budget          : "))
-    currency     = input("Masukkan mata uang       : ")
-    travel_month = input("Masukkan bulan perjalanan: ")
+@app.get("/health", tags=["General"])
+def health_check():
+    return {"status": "OK"}
 
-    print_trip_summary(destination, country, days, budget, currency, travel_month)
 
-if __name__ == "__main__":
-    main()
+@app.post("/api/v1/trips", tags=["Trips"])
+def create_trip(request: TripRequest):
+    daily_budget = calculate_daily_budget(request.budget, request.days)
+    category = get_trip_category(request.budget)
+
+    return {
+        "destination": request.destination,
+        "days": request.days,
+        "budget": request.budget,
+        "daily_budget": daily_budget,
+        "category": category
+    }
+
+@app.get("/api/v1/recommendations", response_model=List[str], tags=["Recommendations"])
+def get_recommendations() -> list[str]:
+    return ["Tokyo Tower", "Mount Fuji", "Shibuya"]
+
+
+@app.get("/api/v1/transportations", response_model=List[str], tags=["Transportations"])
+def get_transportations() -> list[str]:
+    return ["Bus", "Train", "Flight"]
+
+
+@app.get("/api/v1/trip-categories", response_model=List[str], tags=["Categories"])
+def get_trip_categories() -> list[str]:
+    return ["Backpacker", "Standard", "Luxury"]
