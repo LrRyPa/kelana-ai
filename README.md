@@ -49,3 +49,21 @@ Berikut adalah tampilan nyata saat program KelanaAI dijalankan pada terminal:
 >
 > <img width="271" height="211" alt="image" src="https://github.com/user-attachments/assets/e08f90be-2cb5-48af-a69d-07df24801573" />
 >
+
+## 📝 Dokumentasi & Hasil Eksekusi Swagger UI
+> *Tampilan API Program*
+>
+> <img width="1614" height="828" alt="image" src="https://github.com/user-attachments/assets/34918edc-2090-40ff-8517-e69a4631295f" />
+>
+---
+>*Tampilan Method _GET_ Recommendations*
+>
+><img width="1603" height="682" alt="image" src="https://github.com/user-attachments/assets/6a1de5d3-6c52-4828-b737-17afe41a0517" />
+>
+---
+>*Tampilan Method _GET_ Transportations*
+>
+><img width="1599" height="930" alt="image" src="https://github.com/user-attachments/assets/37a4297e-7b55-4a44-b5ed-ce9030a6af0e" />
+>
+
+
