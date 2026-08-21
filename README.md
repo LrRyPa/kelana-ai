@@ -66,4 +66,54 @@ Berikut adalah tampilan nyata saat program KelanaAI dijalankan pada terminal:
 ><img width="1599" height="930" alt="image" src="https://github.com/user-attachments/assets/37a4297e-7b55-4a44-b5ed-ce9030a6af0e" />
 >
 
+## 📝 Dokumentasi & Hasil Teaching KelanaAI to Remember (Tugas 4)
+> *Tambah Trip (CREATE)*
+>
+> <img width="1550" height="813" alt="image" src="https://github.com/user-attachments/assets/216ce952-fc4e-4d31-bae9-23169dc535a5" />
+> OUTPUT:
+>
+><img width="1530" height="752" alt="image" src="https://github.com/user-attachments/assets/eca93a15-872a-4b36-9b26-ad6bb264b23c" />
+>
+---
+>*List Trips (READ)*
+>
+><img width="1574" height="678" alt="image" src="https://github.com/user-attachments/assets/5cfaea19-a29f-4cb5-b2d8-db5e6f0e2720" />
+>
+>*OUTPUT:*
+>
+><img width="1504" height="819" alt="image" src="https://github.com/user-attachments/assets/848bc442-a9db-428c-a251-91d173027f5d" />
+>
+---
+>*List Trip Berdasarkan ID (READ)*
+>
+><img width="1526" height="406" alt="image" src="https://github.com/user-attachments/assets/a95911c4-983f-4ea0-861d-cac5cde173d3" />
+>
+>*OUTPUT:*
+>
+><img width="1496" height="719" alt="image" src="https://github.com/user-attachments/assets/e76faca5-a23e-479c-a1fc-ae106a7994f5" />
+>
+---
+>*Memperbarui Trip (UPDATE)*
+>
+><img width="1531" height="622" alt="image" src="https://github.com/user-attachments/assets/afe493ed-ecc9-4f0f-94e6-50e887da7a45" />
+>
+>*OUTPUT:*
+>
+><img width="1514" height="768" alt="image" src="https://github.com/user-attachments/assets/104315b9-33f5-4149-b28a-960faa2143ad" />
+>
+---
+>*Hapus Trip (DELETE)*
+>
+><img width="1506" height="400" alt="image" src="https://github.com/user-attachments/assets/bfd2c0ff-f5da-4287-a12a-bf8428a1b1aa" />
+>
+>*OUTPUT:*
+>
+><img width="1510" height="793" alt="image" src="https://github.com/user-attachments/assets/e1c44ec3-3a13-4170-a361-4d1cd7d6257a" />
+>
+>*Validasi Trip (READ)*
+>
+><img width="1525" height="467" alt="image" src="https://github.com/user-attachments/assets/acc8c7a8-4e51-4fcd-800b-5d38742edb07" />
+>
+>*hanya trip dengan id 2 yang tersimpan
+
 
