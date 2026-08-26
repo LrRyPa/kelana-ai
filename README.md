@@ -142,7 +142,7 @@ Berikut adalah tampilan nyata saat program KelanaAI dijalankan pada terminal:
 ><img width="1351" height="890" alt="image" src="https://github.com/user-attachments/assets/b0310ee8-da17-42a6-ace4-106da40d2725" />
 >
 ---
->*HOME PAGE (HANDPHONE)*
+>*HOME PAGE (MOBILE)*
 >
 >*resolusi yang digunakan adalah 350 x 600 px
 >
