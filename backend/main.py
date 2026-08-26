@@ -1,6 +1,7 @@
 from typing import List
 from fastapi import FastAPI, HTTPException, status
 from pydantic import BaseModel
+from services.bedrock_service import generate_trip_itinerary
 
 from database import SessionLocal, init_db
 from models.trip import Trip
@@ -126,3 +127,37 @@ def get_recommendations() -> list[str]:
 @app.get("/api/v1/transportations", response_model=List[str], tags=["Transportations"])
 def get_transportations() -> list[str]:
     return ["Bus", "Train", "Flight"]
+
+@app.post("/api/v1/trips/{trip_id}/generate", tags=["Trips"])
+def generate_trip_recommendation(trip_id: int):
+    """
+    Mengambil data trip dari DB, mengirim prompt ke Amazon Bedrock,
+    menyimpan hasil AI ke kolom ai_recommendation di DB, lalu mengembalikannya.
+    """
+    db = SessionLocal()
+    trip = db.query(Trip).filter(Trip.id == trip_id).first()
+
+    if trip is None:
+        db.close()
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Trip with id {trip_id} not found"
+        )
+
+    itinerary_result = generate_trip_itinerary(
+        destination=trip.destination,
+        days=trip.days,
+        budget=trip.budget,
+        category=trip.category
+    )
+
+    trip.ai_recommendation = itinerary_result
+    db.commit()
+    db.refresh(trip)
+    db.close()
+
+    return {
+        "trip_id": trip.id,
+        "destination": trip.destination,
+        "recommendation": trip.ai_recommendation
+    }
