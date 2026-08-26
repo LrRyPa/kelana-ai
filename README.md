@@ -130,5 +130,34 @@ Berikut adalah tampilan nyata saat program KelanaAI dijalankan pada terminal:
 > <img width="843" height="846" alt="image" src="https://github.com/user-attachments/assets/d3c87fd0-8afd-4560-91a2-975e9fda9639" />
 >
 
+## 📝 Dokumentasi & Hasil Giving KelanaAI a Face (Tugas 6)
+>*FULL PAGE (DESKTOP)*
+>
+><img width="1560" height="892" alt="image" src="https://github.com/user-attachments/assets/9088cfc2-c6ef-4905-80a9-4e9d0e4a9314" />
+>
+>*OUTPUT:*
+>
+><img width="1175" height="866" alt="image" src="https://github.com/user-attachments/assets/527f8e8d-d699-42d0-bbe8-5a0a504ac63f" />
+>
+><img width="1351" height="890" alt="image" src="https://github.com/user-attachments/assets/b0310ee8-da17-42a6-ace4-106da40d2725" />
+>
+---
+>*HOME PAGE (HANDPHONE)*
+>
+>*resolusi yang digunakan adalah 350 x 600 px
+>
+><img width="432" height="815" alt="image" src="https://github.com/user-attachments/assets/143c363d-e470-4dae-9267-617afeeecce9" />
+>
+><img width="431" height="813" alt="image" src="https://github.com/user-attachments/assets/8b56fd0c-e6b0-45a9-ac81-411b982703e7" />
+>
+>*OUTPUT:*
+>
+><img width="430" height="810" alt="image" src="https://github.com/user-attachments/assets/ec11bc64-e2ca-48f7-9f41-dde28b223833" />
+>
+><img width="427" height="813" alt="image" src="https://github.com/user-attachments/assets/ea341119-b2c5-4b3a-b403-ac1a1d3cf902" />
+>
+
+
+
 
 
