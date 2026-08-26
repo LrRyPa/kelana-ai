@@ -1,5 +1,6 @@
 from typing import List
 from fastapi import FastAPI, HTTPException, status
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from services.bedrock_service import generate_trip_itinerary
 
@@ -16,17 +17,28 @@ app = FastAPI(
     version="1.0.0"
 )
 
-init_db()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
+init_db()
 
 class TripRequest(BaseModel):
     destination: str
     days: int
     budget: float
-
+    category: str = "Family" 
 
 class TripUpdateRequest(BaseModel):
     budget: float
+
 
 @app.get("/", tags=["General"])
 def home():
@@ -37,10 +49,11 @@ def home():
 def health_check():
     return {"status": "OK"}
 
+
 @app.post("/api/v1/trips", tags=["Trips"])
 def create_trip(request: TripRequest):
     daily_budget = calculate_daily_budget(request.budget, request.days)
-    category = get_trip_category(request.budget)
+    category = request.category if request.category else get_trip_category(request.budget)
 
     trip = Trip(
         destination=request.destination,
@@ -58,12 +71,14 @@ def create_trip(request: TripRequest):
 
     return trip
 
+
 @app.get("/api/v1/trips", tags=["Trips"])
 def list_trips():
     db = SessionLocal()
     trips = db.query(Trip).all()
     db.close()
     return trips
+
 
 @app.get("/api/v1/trips/{trip_id}", tags=["Trips"])
 def get_trip(trip_id: int):
@@ -77,6 +92,7 @@ def get_trip(trip_id: int):
             detail=f"Trip with id {trip_id} not found"
         )
     return trip
+
 
 @app.put("/api/v1/trips/{trip_id}", tags=["Trips"])
 def update_trip(trip_id: int, request: TripUpdateRequest):
@@ -119,6 +135,7 @@ def delete_trip(trip_id: int):
 
     return {"message": f"Trip with id {trip_id} deleted successfully"}
 
+
 @app.get("/api/v1/recommendations", response_model=List[str], tags=["Recommendations"])
 def get_recommendations() -> list[str]:
     return ["Tokyo Tower", "Mount Fuji", "Shibuya"]
@@ -128,12 +145,9 @@ def get_recommendations() -> list[str]:
 def get_transportations() -> list[str]:
     return ["Bus", "Train", "Flight"]
 
+
 @app.post("/api/v1/trips/{trip_id}/generate", tags=["Trips"])
 def generate_trip_recommendation(trip_id: int):
-    """
-    Mengambil data trip dari DB, mengirim prompt ke Amazon Bedrock,
-    menyimpan hasil AI ke kolom ai_recommendation di DB, lalu mengembalikannya.
-    """
     db = SessionLocal()
     trip = db.query(Trip).filter(Trip.id == trip_id).first()
 
@@ -157,7 +171,10 @@ def generate_trip_recommendation(trip_id: int):
     db.close()
 
     return {
-        "trip_id": trip.id,
+        "id": trip.id,
         "destination": trip.destination,
-        "recommendation": trip.ai_recommendation
+        "days": trip.days,
+        "budget": trip.budget,
+        "category": trip.category,
+        "ai_itinerary": trip.ai_recommendation
     }

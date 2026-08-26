@@ -17,27 +17,32 @@ def generate_trip_itinerary(destination: str, days: int, budget: float, category
     }
 
     prompt = f"""
-You are an experienced and professional travel planner.
-Create a structured and rich {days}-day travel itinerary for {destination} with a total budget of USD {budget} (Travel Style: {category}).
+    You are an experienced travel planner.
+    Create a structured {days}-day travel itinerary for {destination} with a budget of USD {budget} (Travel Style: {category}).
 
-For EVERY single day of the trip, you MUST structure the plan exactly using the following format:
+    STRICT OUTPUT FORMAT RULES:
+    - Do NOT use asterisk bold (**) on sub-headings like Morning, Afternoon, Evening, or Day.
+    - Use simple hyphen (-) for list items.
+    - Only use standard bold **Location/Restaurant Name** for actual names of places or restaurants.
+    - Follow this structure EXACTLY for every day:
 
-Day X: [Title of the day's theme]
+    Day X: [Title of the day]
 
-Morning:
-- Include 2-3 specific morning activities or sights to visit early.
-- Include local breakfast spot recommendations.
+    Morning:
+    - Visit [Place 1] for [Activity].
+    - Visit [Place 2] for [Activity].
+    - Breakfast at **[Restaurant Name]**.
 
-Afternoon:
-- Include cultural sites and authentic local experiences.
-- Include lunch recommendations.
+    Afternoon:
+    - Explore [Cultural Site/Place].
+    - Lunch at **[Restaurant Name]**.
 
-Evening:
-- Include specific dinner spots (authentic restaurants or local cuisine).
-- Include evening activities or nightlife experiences.
+    Evening:
+    - Dinner at **[Restaurant Name]**.
+    - Enjoy [Evening Activity].
 
-Keep the tone engaging, practical, and well-structured.
-"""
+    End the itinerary with 1 closing sentence.
+    """
 
     payload = {
         "messages": [
