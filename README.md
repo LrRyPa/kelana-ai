@@ -116,4 +116,19 @@ Berikut adalah tampilan nyata saat program KelanaAI dijalankan pada terminal:
 >
 >*hanya trip dengan id 2 yang tersimpan
 
+## 📝 Dokumentasi & Hasil Teaching KelanaAI to Think with AI (Tugas 5)
+> *Generate Recommendation*
+>
+> <img width="1775" height="512" alt="image" src="https://github.com/user-attachments/assets/084cbbb9-ac4a-4db5-b0a3-cafe27c606be" />
+>
+>*OUTPUT:*
+>
+><img width="1725" height="856" alt="image" src="https://github.com/user-attachments/assets/a83a703b-f551-4b9f-8e07-6f517c7a697a" />
+>
+>*Validate Recommendation (READ)*
+>
+> <img width="843" height="846" alt="image" src="https://github.com/user-attachments/assets/d3c87fd0-8afd-4560-91a2-975e9fda9639" />
+>
+
+
 
