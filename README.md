@@ -163,6 +163,10 @@ Berikut adalah tampilan nyata saat program KelanaAI dijalankan pada terminal:
 >
 ><img width="1892" height="897" alt="image" src="https://github.com/user-attachments/assets/b739e322-b749-420c-80e6-222130e42657" />
 >
+>*View Details Trips*
+>
+><img width="1882" height="891" alt="image" src="https://github.com/user-attachments/assets/f2e3d46f-56fb-4bd5-977e-bd93d8582ab1" />
+>
 >*Fitur Pagination*
 >
 ><img width="1895" height="455" alt="image" src="https://github.com/user-attachments/assets/95669a55-22f7-4b8b-985a-8e77aa7e4648" />
@@ -173,6 +177,10 @@ Berikut adalah tampilan nyata saat program KelanaAI dijalankan pada terminal:
 ><img width="427" height="803" alt="image" src="https://github.com/user-attachments/assets/cb550a3b-8c30-426b-84bd-13024d995d1a" />
 >
 ><img width="433" height="821" alt="image" src="https://github.com/user-attachments/assets/8a563e03-f975-409f-8ad8-23c954bd7a19" />
+>
+>*View Details Trips*
+>
+><img width="425" height="818" alt="image" src="https://github.com/user-attachments/assets/57a3ee15-5d5b-4afa-a1bd-2c26fd8930e2" />
 >
 >*Fitur Pagination*
 >
