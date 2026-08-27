@@ -75,8 +75,8 @@ export default function Home() {
             <a href="#planner" className="hover:text-indigo-400 transition-colors">
                 Planner
             </a>
-            <a href="#features" className="hover:text-indigo-400 transition-colors">
-                Fitur
+            <a href="/trips" className="hover:text-indigo-400 transition-colors">
+                Riwayat
             </a>
             </nav>
         </div>
