@@ -156,6 +156,28 @@ Berikut adalah tampilan nyata saat program KelanaAI dijalankan pada terminal:
 >
 ><img width="427" height="813" alt="image" src="https://github.com/user-attachments/assets/ea341119-b2c5-4b3a-b403-ac1a1d3cf902" />
 >
+## 📝 Dokumentasi & Hasil Connecting KelanaAI's Brain and Face (Tugas 7)
+>*FULL PAGE (DESKTOP)*
+>
+><img width="1892" height="897" alt="image" src="https://github.com/user-attachments/assets/7c619535-5348-47b3-b681-f746ee22817b" />
+>
+><img width="1892" height="897" alt="image" src="https://github.com/user-attachments/assets/b739e322-b749-420c-80e6-222130e42657" />
+>
+>*Fitur Pagination*
+>
+><img width="1895" height="455" alt="image" src="https://github.com/user-attachments/assets/95669a55-22f7-4b8b-985a-8e77aa7e4648" />
+>
+---
+>*HOME PAGE (MOBILE)*
+>
+><img width="427" height="803" alt="image" src="https://github.com/user-attachments/assets/cb550a3b-8c30-426b-84bd-13024d995d1a" />
+>
+><img width="433" height="821" alt="image" src="https://github.com/user-attachments/assets/8a563e03-f975-409f-8ad8-23c954bd7a19" />
+>
+>*Fitur Pagination*
+>
+><img width="432" height="810" alt="image" src="https://github.com/user-attachments/assets/e64c3c14-0337-4b8b-919f-cdf1b66b5b65" />
+>
 
 
 
