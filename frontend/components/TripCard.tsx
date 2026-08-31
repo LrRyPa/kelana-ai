@@ -56,7 +56,6 @@ export default function TripCard({ trip }: TripCardProps) {
     return (
         <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-slate-700 transition-all shadow-lg flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="flex items-start sm:items-center gap-4">
-            {/* Destination Icon / Flag */}
             <div className="w-12 h-12 rounded-xl bg-slate-800 border border-slate-700/60 flex items-center justify-center text-2xl shadow-inner shrink-0 overflow-hidden">
             {flagUrl ? (
                 <img
@@ -70,13 +69,11 @@ export default function TripCard({ trip }: TripCardProps) {
             </div>
 
             <div className="space-y-1.5 flex-1">
-            {/* Kontainer Utama: Berjajar ke bawah di Mobile, Sejajar di Desktop */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-2">
                 <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
                 {trip.destination}
                 </h3>
 
-                {/* Sub-kontainer Badge: Selalu horizontal di bawah nama destinasi (Mobile) */}
                 <div className="flex items-center gap-2 flex-wrap">
                 <span className={`text-xs px-2.5 py-0.5 rounded-full border font-semibold ${budgetCategory.bg}`}>
                     {budgetCategory.label}
@@ -97,7 +94,6 @@ export default function TripCard({ trip }: TripCardProps) {
             </div>
         </div>
 
-        {/* Action Button */}
         <Link
             href={`/trips/${trip.id}`}
             className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition-colors w-full sm:w-auto shrink-0 shadow-md"

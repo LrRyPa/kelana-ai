@@ -39,10 +39,8 @@ export default function TripDetailPage({ params }: { params: Promise<{ id: strin
         );
     }
 
-    // Menyesuaikan penamaan kolom backend (ai_recommendation atau ai_itinerary)
     const itineraryRaw = trip.ai_recommendation || (trip as unknown as { ai_itinerary?: string }).ai_itinerary || "";
 
-    // Pemformatan nominal budget (misal USD 2,000)
     const formattedBudget = new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
@@ -53,7 +51,6 @@ export default function TripDetailPage({ params }: { params: Promise<{ id: strin
         <main className="min-h-screen w-full bg-slate-950 text-white p-6 sm:p-12 pb-24 overflow-y-auto">
         <div className="max-w-4xl mx-auto space-y-8">
             
-            {/* Navigasi Kembali */}
             <Link 
             href="/trips" 
             className="text-slate-400 hover:text-indigo-400 text-sm font-medium transition-colors inline-flex items-center gap-1"
@@ -61,14 +58,12 @@ export default function TripDetailPage({ params }: { params: Promise<{ id: strin
             ← Back to Trips
             </Link>
 
-            {/* Header Title */}
             <div className="space-y-2 border-b border-slate-800 pb-6">
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
                 {trip.destination}
             </h1>
             </div>
 
-            {/* Grid Stats */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             <div className="bg-slate-900/80 border border-slate-800 p-4 rounded-2xl shadow-sm">
                 <span className="text-xs text-slate-400 font-semibold uppercase tracking-wider block">DESTINATION</span>
@@ -88,7 +83,6 @@ export default function TripDetailPage({ params }: { params: Promise<{ id: strin
             </div>
             </div>
 
-            {/* AI Recommendation Structured Section */}
             {itineraryRaw && (
             <section className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
                 <h3 className="text-xs font-semibold text-indigo-400 uppercase tracking-widest pb-4 border-b border-slate-800">
@@ -165,7 +159,6 @@ export default function TripDetailPage({ params }: { params: Promise<{ id: strin
                         }
                     });
 
-                    // Filter out orphaned activities_header
                     const finalGroups = groups.filter((item, idx) => {
                         if (item.type === "activities_header") {
                         const nextItem = groups[idx + 1];
@@ -179,7 +172,6 @@ export default function TripDetailPage({ params }: { params: Promise<{ id: strin
                         key={dayIdx}
                         className="bg-slate-950/60 border border-slate-800 rounded-2xl p-5 sm:p-6 shadow-md space-y-4"
                         >
-                        {/* Day Header */}
                         <div className="flex items-center gap-3 pb-3 border-b border-slate-800/80">
                             <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 font-bold text-sm border border-indigo-500/30">
                             {dayIdx + 1}
@@ -189,7 +181,6 @@ export default function TripDetailPage({ params }: { params: Promise<{ id: strin
                             </h4>
                         </div>
 
-                        {/* Content Section */}
                         <div className="space-y-3 sm:pl-2">
                             {finalGroups.map((group, gIdx) => {
                             if (group.type === "time") {
