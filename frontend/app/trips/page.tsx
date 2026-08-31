@@ -80,7 +80,6 @@ export default function TripsPage() {
 
     return (
         <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
-        {/* Header Navigasi Konsisten */}
         <header className="border-b border-slate-800/80 bg-slate-900/50 backdrop-blur-md sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <Link href="/" className="flex items-center gap-2">
@@ -108,10 +107,8 @@ export default function TripsPage() {
             </div>
         </header>
 
-        {/* Main Content Area */}
         <main className="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
             
-            {/* Header Seksi */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-800 gap-4">
             <div>
                 <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
@@ -129,7 +126,6 @@ export default function TripsPage() {
             </Link>
             </div>
 
-            {/* Dynamic Trip List atau Empty State */}
             {trips.length === 0 ? (
             <div className="bg-slate-900/70 border border-slate-800 rounded-3xl p-12 text-center space-y-4 shadow-xl backdrop-blur-sm">
                 <div className="w-14 h-14 bg-slate-950 text-indigo-400 flex items-center justify-center rounded-2xl mx-auto border border-slate-800">
@@ -170,7 +166,6 @@ export default function TripsPage() {
                 ))}
                 </div>
 
-                {/* Pagination Component */}
                 {totalPages > 1 && (
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-slate-800/80 text-xs">
                     <p className="text-slate-400">
@@ -220,7 +215,6 @@ export default function TripsPage() {
             )}
         </main>
 
-        {/* Footer */}
         <footer className="border-t border-slate-900 bg-slate-950 py-6 mt-12">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500">
             © {new Date().getFullYear()} KelanaAI. Hak Cipta Dilindungi Undang-Undang.

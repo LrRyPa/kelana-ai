@@ -125,7 +125,6 @@ export default function RegisterPage() {
                                 aria-label={showPassword ? "Sembunyikan password" : "Tampilkan password"}
                             >
                                 {showPassword ? (
-                                    /* Icon Mata Terbuka */
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -146,7 +145,6 @@ export default function RegisterPage() {
                                         />
                                     </svg>
                                 ) : (
-                                    /* Icon Mata Tertutup */
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
