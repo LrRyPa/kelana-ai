@@ -29,8 +29,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# --- SCHEMAS (PYDANTIC) ---
-
 class UserRegister(BaseModel):
     name: str
     email: str
@@ -49,9 +47,6 @@ class TripRequest(BaseModel):
 class TripUpdateRequest(BaseModel):
     budget: float
 
-
-# --- GENERAL ENDPOINTS ---
-
 @app.get("/", tags=["General"])
 def home():
     return {"message": "Welcome to KelanaAI"}
@@ -59,9 +54,6 @@ def home():
 @app.get("/health", tags=["General"])
 def health_check():
     return {"status": "OK"}
-
-
-# --- AUTHENTICATION ENDPOINTS (SESI 8) ---
 
 @app.post("/api/v1/auth/register", tags=["Auth"])
 def register(user_data: UserRegister, db: Session = Depends(get_db)):
